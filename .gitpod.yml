@@ -1,6 +1,10 @@
 image:
   file: .gitpod.Dockerfile
 
+tasks:
+  - before: yes | sdk i java 8.0.232-open &&
+            sdk i kotlin
+
 vscode:
   extensions:
     - mathiasfrohlich.Kotlin@1.7.0:9xQZtwTUg4bdXHCMyxM7vQ==
