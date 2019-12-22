@@ -1,6 +1,6 @@
 FROM gitpod/workspace-full:latest
 
-ENV ANDROID_HOME=~/android-sdk \
+ENV ANDROID_HOME=/home/gitpod/android-sdk \
     SDK_NAME=sdk-tools-linux-4333796.zip
 
 USER root
