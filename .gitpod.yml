@@ -1,0 +1,13 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - before: yes | sdk i java 8.0.232-open
+  - init: yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
+
+vscode:
+  extensions:
+    - mathiasfrohlich.Kotlin@1.7.0:9xQZtwTUg4bdXHCMyxM7vQ==
+    - fwcd.kotlin@0.2.11:moh8IDanzsIlhtK2IeiLmQ==
+    - intellsmi.comment-translate@1.4.2:eTFMGnDqfEpALAFKi6xOSg==
+    - naco-siren.gradle-language@0.2.3:zC8GEZcOCPVruGnbzEEMFQ==
