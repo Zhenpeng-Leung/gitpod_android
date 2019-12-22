@@ -6,6 +6,7 @@ ENV ANDROID_HOME=/home/gitpod/android-sdk \
 USER root
 
 RUN apt-get update && apt-get -y upgrade && \
+    apt-get -y install at && \
     apt-get -y autoremove && apt-get clean
 
 USER gitpod
