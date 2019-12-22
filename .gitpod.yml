@@ -2,10 +2,8 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - env:
-      CLASSPATH: .;%JAVA_HOME%\lib
-  - before: yes | sdk i java 8.0.232-open
-  - init: yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
+  - before: yes | sdk i java 8.0.232-open && \
+            yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
 
 vscode:
   extensions:
