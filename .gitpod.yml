@@ -3,7 +3,7 @@ image:
 
 tasks:
   - before: yes | sdk i java 8.0.232-open && \
-            yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
+            yes | /home/gitpod/android-sdk/tools/bin/sdkmanager --licenses
 
 vscode:
   extensions:
