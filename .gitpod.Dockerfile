@@ -15,4 +15,5 @@ RUN mkdir -p ~/.android ~/android-sdk && \
     cd ${ANDROID_HOME} && \
     wget https://dl.google.com/android/repository/${SDK_NAME} && \
     unzip ${SDK_NAME} && \
-    rm -f ${SDK_NAME}
+    rm -f ${SDK_NAME} && \
+    which java
