@@ -10,7 +10,7 @@ RUN apt-get update && apt-get -y upgrade && \
 
 USER gitpod
 
-RUN mkdir -p /home/gitpod/{.android, android-sdk} && \
+RUN mkdir -p ~/.android ~/android-sdk && \
     touch ~/.android/repositories.cfg && \
     cd ${ANDROID_HOME} && \
     wget https://dl.google.com/android/repository/${SDK_NAME} && \
