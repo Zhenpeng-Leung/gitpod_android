@@ -4,7 +4,7 @@ image:
 tasks:
   - before: yes | sdk i java 8.0.232-open &&
             sdk i kotlin &&
-            exit 0
+            clear
 
 vscode:
   extensions:
