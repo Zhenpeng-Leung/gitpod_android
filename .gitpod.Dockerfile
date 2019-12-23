@@ -19,4 +19,4 @@ RUN mkdir -p ~/.android ${ANDROID_HOME} && \
 
 USER root
 RUN apt-get -y purge openjdk-8-jdk && \
-    apt-get clean
+    apt-get clean && rm -rf /var/cache/apt/*
