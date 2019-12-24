@@ -1,22 +1,23 @@
 FROM gitpod/workspace-full:latest
 
-ENV ANDROID_HOME=/home/gitpod/android-sdk \
-    SDK_NAME=sdk-tools-linux-4333796.zip
-
 USER root
 RUN apt-get update && \
+    apt-get -y install openjdk-8-jdk && \
     apt-get -y upgrade && \
-    apt-get -y install openjdk-8-jdk
+    apt-get -y clean && \
+    rm -rf /var/cache/apt/*
 
 USER gitpod
+# Install android SDK
+ENV ANDROID_HOME=/home/gitpod/sdk/android
+ENV ANDROID_SDK_NAME=sdk-tools-linux-4333796.zip
+ENV PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
 RUN mkdir -p ~/.android ${ANDROID_HOME} && \
     touch ~/.android/repositories.cfg && \
     cd ${ANDROID_HOME} && \
-    wget https://dl.google.com/android/repository/${SDK_NAME} && \
-    unzip ${SDK_NAME} && \
-    rm -f ${SDK_NAME} && \
-    yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
-
-USER root
-RUN apt-get -y purge openjdk-8-jdk && \
-    apt-get clean && rm -rf /var/cache/apt/*
+    wget -q https://dl.google.com/android/repository/${ANDROID_SDK_NAME} && \
+    unzip -q ${ANDROID_SDK_NAME} && \
+    rm -f ${ANDROID_SDK_NAME} && \
+    yes | sdkmanager --licenses && \
+    sdkmanager --update
+    
