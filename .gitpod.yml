@@ -2,7 +2,7 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - before: >
+  - command: >
       yes | sdk i java 8.0.232-open &&
       sdk i kotlin &&
       exit
